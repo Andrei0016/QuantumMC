@@ -13,16 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
 
 @Mixin(RedstoneWireBlock.class)
-public class redstoneWireBlockMixin {
-    @ModifyReturnValue(
-            method = "getStateForNeighborUpdate",
-            at = @At(value = "RETURN", ordinal = 0)
-    )
-    private BlockState dustTrapdoorReintroduced(BlockState ret, @Local(argsOnly = true, ordinal = 0) BlockState state)  {
-        ret = state;
-
-        return ret;
-    }
+public class redstoneWireMixin {
     @WrapOperation(
             method = "getRenderConnectionType(Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/Direction;Z)Lnet/minecraft/block/enums/WireConnection;",
             constant = @Constant(classValue = TrapdoorBlock.class))

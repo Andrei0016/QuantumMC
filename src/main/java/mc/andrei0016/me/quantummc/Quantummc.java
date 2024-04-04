@@ -1,5 +1,6 @@
 package mc.andrei0016.me.quantummc;
 
+import mc.andrei0016.me.quantummc.config.ModConfigs;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -10,6 +11,7 @@ public class Quantummc implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModConfigs.registerConfigs();
 		LOGGER.info("QuantumMC initialized successfully!");
 	}
 }
