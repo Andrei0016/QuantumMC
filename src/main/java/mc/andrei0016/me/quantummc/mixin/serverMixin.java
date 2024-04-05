@@ -26,13 +26,13 @@ public class serverMixin {
             original.call(world, shouldKeepTicking);
         }catch (ClassCastException | StackOverflowError | CrashException error) {
             error.printStackTrace();
-            alertDimensionAboutCrash(world);
+            if (ModConfigs.warnCrash) alertDimensionAboutCrash(world);
         }
     }
     @Unique
     private void alertDimensionAboutCrash(ServerWorld world) {
         MinecraftServer server = (MinecraftServer) (Object) this;
-        if (ModConfigs.warnCrash == true) server.getPlayerManager().sendToDimension(new GameMessageS2CPacket(Text.literal("Update Suppression crash just occurred!").formatted(Formatting.GRAY), false), world.getRegistryKey());
-
+        server.getPlayerManager().sendToDimension(
+                new GameMessageS2CPacket(Text.literal("Update Suppression crash just occurred!").formatted(Formatting.GRAY), false), world.getRegistryKey());
     }
 }
