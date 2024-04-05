@@ -8,4 +8,4 @@ QuantumMC is a minecraft mod meant to reintroduce certain tehnical features. Thi
 4. **(1.20.4) Reintroduces CCE update suppression**
 5. **(1.20.4) Makes redstone components float on trapdoors like in older versions**
 
-`Note: this is still WIP and a lot will still change!!`
+`Note: this is still WIP and a lot will still change!! 1.20.4 version will be added later`
