@@ -2,7 +2,6 @@ package mc.andrei0016.me.quantummc.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import mc.andrei0016.me.quantummc.config.ModConfigs;
 import net.minecraft.network.packet.s2c.play.GameMessageS2CPacket;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
@@ -26,13 +25,12 @@ public class serverMixin {
             original.call(world, shouldKeepTicking);
         }catch (ClassCastException | StackOverflowError | CrashException error) {
             error.printStackTrace();
-            if (ModConfigs.warnCrash) alertDimensionAboutCrash(world);
+            if (true) alertDimensionAboutCrash(world);
         }
     }
     @Unique
     private void alertDimensionAboutCrash(ServerWorld world) {
-        MinecraftServer server = (MinecraftServer) (Object) this;
-        server.getPlayerManager().sendToDimension(
-                new GameMessageS2CPacket(Text.literal("Update Suppression crash just occurred!").formatted(Formatting.GRAY), false), world.getRegistryKey());
+        MinecraftServer server = world.getServer();
+        server.getPlayerManager().sendToDimension(new GameMessageS2CPacket(Text.literal("Update Suppression crash just occurred!").formatted(Formatting.GRAY), false), world.getRegistryKey());
     }
 }
