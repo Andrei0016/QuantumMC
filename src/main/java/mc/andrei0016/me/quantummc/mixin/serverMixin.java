@@ -2,6 +2,7 @@ package mc.andrei0016.me.quantummc.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import mc.andrei0016.me.quantummc.config.ConfigManager;
 import net.minecraft.network.packet.s2c.play.GameMessageS2CPacket;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.world.ServerWorld;
@@ -25,7 +26,7 @@ public class serverMixin {
             original.call(world, shouldKeepTicking);
         }catch (ClassCastException | StackOverflowError | CrashException error) {
             error.printStackTrace();
-            if (true) alertDimensionAboutCrash(world);
+            if (ConfigManager.loadConfig().isWarnCrash()) alertDimensionAboutCrash(world);
         }
     }
     @Unique
