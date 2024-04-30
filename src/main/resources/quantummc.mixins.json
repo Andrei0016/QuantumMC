@@ -3,12 +3,13 @@
 	"package": "mc.andrei0016.me.quantummc.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"comparatorBlockMixin",
+		"shulkerBoxBlockMixin",
 		"redstoneWireMixin",
 		"screenHandlerMixin",
 		"serverMixin",
 		"shulkerBoxBlockMixin",
-		"worldMixin"
+		"worldMixin",
+		"comparatorBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
