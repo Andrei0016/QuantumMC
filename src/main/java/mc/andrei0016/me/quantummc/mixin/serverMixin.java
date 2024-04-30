@@ -25,7 +25,7 @@ public class serverMixin {
         try{
             original.call(world, shouldKeepTicking);
         }catch (ClassCastException | StackOverflowError | CrashException error) {
-            error.printStackTrace();
+            if (ConfigManager.loadConfig().isWarnCrash()) error.printStackTrace();
             if (ConfigManager.loadConfig().isWarnCrash()) alertDimensionAboutCrash(world);
         }
     }
