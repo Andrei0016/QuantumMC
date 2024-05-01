@@ -4,5 +4,5 @@ QuantumMC is a minecraft mod meant to reintroduce certain tehnical features. Thi
 # Features
 1. **Reintroduces update suppression**
 2. **Reintroduces item shadowing**
-3. **Fixes update suppression crashes (You can make the mod warn you of crashes by setting `quantumMC.rules.warnCrash` to `true` in `QuantumMcConfig.proprieties` file**
+3. **Fixes update suppression crashes (You can make the mod warn you of crashes by setting `warnCrash` to `true` in `QuantumMcConfig.config` file**
 4. **Reintroduces CCE update suppression** (1.20.2)
