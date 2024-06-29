@@ -8,10 +8,12 @@ import org.slf4j.LoggerFactory;
 
 public class Quantummc implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("quantummc");
+	public static ConfigManager config;
 
 	@Override
 	public void onInitialize() {
-		ConfigManager.loadConfig();
+		config = ConfigManager.loadConfig();
+		LOGGER.info(String.valueOf(config.isWarnCrash()));
 		LOGGER.info("QuantumMC initialized successfully!");
 	}
 }
